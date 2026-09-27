@@ -1,0 +1,2228 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahafik Math Care | গণিত বইয়ের অনলাইন স্টোর</title>
+    <!-- Font Awesome 6 (Free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Hind Siliguri for Bengali -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Segoe UI', Roboto, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ----- HEADER ----- */
+        .top-header {
+            background: #ffffff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.25);
+        }
+
+        .logo-text h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 13px;
+            font-weight: 500;
+            color: #64748b;
+        }
+
+        /* ----- NAV BAR ----- */
+        .nav-categories {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 4px 0;
+        }
+
+        .nav-list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 4px 28px;
+            font-size: 15px;
+            font-weight: 500;
+            justify-content: center;
+        }
+
+        .nav-list li a {
+            text-decoration: none;
+            color: #334155;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 12px 0;
+            border-bottom: 3px solid transparent;
+            transition: border 0.15s, color 0.15s;
+        }
+
+        .nav-list li a i {
+            color: #2563eb;
+            font-size: 14px;
+        }
+
+        .nav-list li a:hover {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+
+        /* ----- HERO SECTION ----- */
+        .hero-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            padding: 60px 0 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '📚 ∑ π ∞ √';
+            position: absolute;
+            right: -30px;
+            top: -20px;
+            font-size: 180px;
+            font-weight: 700;
+            opacity: 0.06;
+            color: #ffffff;
+            letter-spacing: 30px;
+            pointer-events: none;
+            white-space: nowrap;
+            transform: rotate(-10deg);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .hero-title h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-title p {
+            font-size: 18px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 28px 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 28px;
+            color: #fbbf24;
+        }
+
+        .feature-card h3 {
+            color: white;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        /* ----- BOOKS SECTION ----- */
+        .books-section {
+            padding: 60px 0 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 44px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        /* ----- CATEGORY TABS ----- */
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .category-tab {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Hind Siliguri', sans-serif;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .category-tab i {
+            color: #2563eb;
+        }
+
+        .category-tab:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .category-tab.active {
+            background: #2563eb;
+            border-color: #2563eb;
+            color: white;
+            box-shadow: 0 8px 20px -6px rgba(37, 99, 235, 0.4);
+        }
+
+        .category-tab.active i {
+            color: white;
+        }
+
+        /* ----- BOOK GRID ----- */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 28px;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 24px;
+            padding: 22px 20px 26px;
+            box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            border-radius: 24px 24px 0 0;
+        }
+
+        .book-card.algebra::before {
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+        }
+
+        .book-card.calculus::before {
+            background: linear-gradient(90deg, #7c3aed, #8b5cf6);
+        }
+
+        .book-card.geometry::before {
+            background: linear-gradient(90deg, #059669, #10b981);
+        }
+
+        .book-card.probability::before {
+            background: linear-gradient(90deg, #ea580c, #f97316);
+        }
+
+        .book-card.mental-math::before {
+            background: linear-gradient(90deg, #0891b2, #06b6d4);
+        }
+
+        .book-card.number-theory::before {
+            background: linear-gradient(90deg, #be185d, #ec4899);
+        }
+
+        .book-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px -12px rgba(37, 99, 235, 0.15);
+            border-color: #bfdbfe;
+        }
+
+        .book-card.hidden {
+            display: none;
+        }
+
+        .book-cover {
+            background: linear-gradient(145deg, #dbeafe, #eff6ff);
+            border-radius: 18px;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 18px;
+            transition: transform 0.4s ease;
+        }
+
+        .book-card:hover .book-cover img {
+            transform: scale(1.05);
+        }
+
+        .book-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #ef4444;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 50px;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+            z-index: 2;
+        }
+
+        .book-badge.new {
+            background: #10b981;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+        }
+
+        .book-badge.hot {
+            background: #f97316;
+            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+        }
+
+        .book-badge.bestseller {
+            background: #7c3aed;
+            box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
+        }
+
+        .quick-view {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: rgba(15, 23, 42, 0.9);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 8px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: 'Hind Siliguri', sans-serif;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 2;
+        }
+
+        .book-card:hover .quick-view {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .quick-view:hover {
+            background: #2563eb;
+        }
+
+        .book-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 6px;
+            line-height: 1.4;
+            min-height: 50px;
+        }
+
+        .book-author {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+
+        .book-rating {
+            font-size: 14px;
+            color: #fbbf24;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .book-rating span {
+            color: #64748b;
+            font-size: 13px;
+            margin-left: 4px;
+        }
+
+        .book-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .book-price .old-price {
+            font-size: 15px;
+            font-weight: 500;
+            color: #94a3b8;
+            text-decoration: line-through;
+        }
+
+        .book-price .discount {
+            font-size: 12px;
+            font-weight: 700;
+            color: #10b981;
+            background: #d1fae5;
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+
+        .book-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .book-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex: 1;
+            padding: 12px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'Hind Siliguri', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            border: none;
+        }
+
+        .book-btn.primary {
+            background: #2563eb;
+            color: white;
+            box-shadow: 0 8px 20px -6px rgba(37, 99, 235, 0.4);
+        }
+
+        .book-btn.primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .book-btn.secondary {
+            background: #f1f5f9;
+            color: #475569;
+            border: 2px solid #e2e8f0;
+            flex: 0 0 auto;
+            padding: 12px 16px;
+        }
+
+        .book-btn.secondary:hover {
+            background: #e2e8f0;
+            border-color: #cbd5e1;
+            color: #2563eb;
+        }
+
+        /* ----- WHY CHOOSE US SECTION ----- */
+        .why-section {
+            padding: 70px 0;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 20px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .why-card:hover {
+            background: white;
+            border-color: #bfdbfe;
+            box-shadow: 0 16px 32px -12px rgba(37, 99, 235, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+            color: #2563eb;
+        }
+
+        .why-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* ----- TESTIMONIALS SECTION ----- */
+        .testimonials-section {
+            padding: 70px 0;
+            background: #f8fafc;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px 26px;
+            box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(37, 99, 235, 0.12);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            font-size: 80px;
+            font-weight: 700;
+            color: #dbeafe;
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-stars {
+            color: #fbbf24;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #2563eb;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .testimonial-info h5 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 2px;
+        }
+
+        .testimonial-info p {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        /* ----- STATS SECTION ----- */
+        .stats-section {
+            background: white;
+            padding: 50px 0;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item .stat-number {
+            font-size: 40px;
+            font-weight: 700;
+            color: #2563eb;
+            line-height: 1.2;
+            margin-bottom: 6px;
+        }
+
+        .stat-item .stat-label {
+            font-size: 15px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* ----- CTA SECTION ----- */
+        .cta-section {
+            padding: 70px 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '∫ f(x) dx';
+            position: absolute;
+            left: -20px;
+            bottom: -30px;
+            font-size: 120px;
+            font-weight: 700;
+            opacity: 0.04;
+            color: #ffffff;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .cta-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 14px;
+        }
+
+        .cta-content p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn-primary {
+            background: #fbbf24;
+            color: #0f172a;
+            border: none;
+            border-radius: 50px;
+            padding: 16px 40px;
+            font-size: 17px;
+            font-weight: 700;
+            font-family: 'Hind Siliguri', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 24px -6px rgba(251, 191, 36, 0.5);
+        }
+
+        .cta-btn-primary:hover {
+            background: #f59e0b;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 32px -8px rgba(251, 191, 36, 0.6);
+        }
+
+        .cta-btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            padding: 16px 40px;
+            font-size: 17px;
+            font-weight: 600;
+            font-family: 'Hind Siliguri', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-btn-secondary:hover {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* ----- FOOTER ----- */
+        .footer {
+            background: #0b1120;
+            color: #94a3b8;
+            padding: 60px 0 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 44px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s, padding-left 0.2s;
+            display: inline-block;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fbbf24;
+            padding-left: 4px;
+        }
+
+        /* ----- FOOTER SOCIAL LINKS ----- */
+        .footer-social {
+            display: flex;
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .footer-social a {
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-social a.facebook {
+            background: linear-gradient(135deg, #1877f2, #0e5fce);
+        }
+
+        .footer-social a.facebook:hover {
+            background: linear-gradient(135deg, #0e5fce, #1877f2);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 22px -4px rgba(24, 119, 242, 0.6);
+        }
+
+        .footer-social a.whatsapp {
+            background: linear-gradient(135deg, #25d366, #1da851);
+        }
+
+        .footer-social a.whatsapp:hover {
+            background: linear-gradient(135deg, #1da851, #25d366);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 22px -4px rgba(37, 211, 102, 0.6);
+        }
+
+        .footer-social a.youtube {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+        }
+
+        .footer-social a.youtube:hover {
+            background: linear-gradient(135deg, #cc0000, #ff0000);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 22px -4px rgba(255, 0, 0, 0.6);
+        }
+
+        .footer-social a.instagram {
+            background: linear-gradient(135deg, #e1306c, #c13584);
+        }
+
+        .footer-social a.instagram:hover {
+            background: linear-gradient(135deg, #c13584, #e1306c);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 22px -4px rgba(225, 48, 108, 0.6);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 14px;
+        }
+
+        .footer-bottom span i {
+            color: #fbbf24;
+            margin-right: 6px;
+        }
+
+        /* ===== THREE DOT MENU ===== */
+        .three-dot-btn {
+            position: fixed;
+            right: 24px;
+            bottom: 30px;
+            width: 62px;
+            height: 62px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            cursor: pointer;
+            z-index: 900;
+            box-shadow: 0 12px 30px -6px rgba(37, 99, 235, 0.6);
+            transition: all 0.3s ease;
+            animation: pulse 2.5s infinite;
+        }
+
+        .three-dot-btn:hover {
+            transform: scale(1.08) rotate(90deg);
+            box-shadow: 0 16px 40px -6px rgba(37, 99, 235, 0.8);
+        }
+
+        .three-dot-btn.active {
+            transform: rotate(180deg);
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            box-shadow: 0 12px 30px -6px rgba(239, 68, 68, 0.6);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 12px 30px -6px rgba(37, 99, 235, 0.6), 0 0 0 0 rgba(37, 99, 235, 0.5);
+            }
+            50% {
+                box-shadow: 0 12px 30px -6px rgba(37, 99, 235, 0.6), 0 0 0 16px rgba(37, 99, 235, 0);
+            }
+        }
+
+        /* ===== SIDE MENU PANEL ===== */
+        .side-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 950;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .side-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 360px;
+            max-width: 88vw;
+            height: 100vh;
+            background: white;
+            z-index: 960;
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+            transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .side-menu.active {
+            right: 0;
+        }
+
+        .side-menu-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            padding: 26px 24px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .side-menu-header::before {
+            content: '∑ π ∞';
+            position: absolute;
+            right: -10px;
+            bottom: -20px;
+            font-size: 80px;
+            font-weight: 700;
+            opacity: 0.08;
+            letter-spacing: 10px;
+        }
+
+        .side-menu-header h3 {
+            font-size: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .side-menu-header h3 i {
+            color: #fbbf24;
+        }
+
+        .side-menu-header p {
+            font-size: 13px;
+            opacity: 0.85;
+            margin-top: 4px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .side-menu-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            z-index: 2;
+        }
+
+        .side-menu-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .side-menu-body {
+            padding: 18px 14px 30px;
+            flex: 1;
+        }
+
+        .side-menu-section-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 16px 12px 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .side-menu-section-title i {
+            color: #2563eb;
+            font-size: 13px;
+        }
+
+        .side-menu-link {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 13px 14px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #334155;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            margin-bottom: 4px;
+            border: 1px solid transparent;
+        }
+
+        .side-menu-link:hover {
+            background: #eff6ff;
+            color: #2563eb;
+            border-color: #bfdbfe;
+            transform: translateX(-4px);
+        }
+
+        .side-menu-link .menu-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: white;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+
+        .side-menu-link:hover .menu-icon {
+            transform: scale(1.1);
+        }
+
+        .menu-icon.blue { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+        .menu-icon.purple { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+        .menu-icon.green { background: linear-gradient(135deg, #059669, #047857); }
+        .menu-icon.orange { background: linear-gradient(135deg, #ea580c, #c2410c); }
+        .menu-icon.cyan { background: linear-gradient(135deg, #0891b2, #0e7490); }
+        .menu-icon.pink { background: linear-gradient(135deg, #be185d, #9d174d); }
+        .menu-icon.yellow { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .menu-icon.red { background: linear-gradient(135deg, #ef4444, #dc2626); }
+
+        .side-menu-divider {
+            height: 1px;
+            background: #e2e8f0;
+            margin: 14px 12px;
+        }
+
+        /* Social block inside menu */
+        .side-menu-social {
+            display: flex;
+            gap: 10px;
+            padding: 6px 12px 4px;
+        }
+
+        .side-menu-social a {
+            flex: 1;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 19px;
+            transition: all 0.25s;
+            gap: 2px;
+        }
+
+        .side-menu-social a span {
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .side-menu-social a.facebook { background: linear-gradient(135deg, #1877f2, #0e5fce); }
+        .side-menu-social a.whatsapp { background: linear-gradient(135deg, #25d366, #1da851); }
+        .side-menu-social a.youtube  { background: linear-gradient(135deg, #ff0000, #cc0000); }
+
+        .side-menu-social a:hover {
+            transform: translateY(-4px);
+        }
+
+        .side-menu-social a.facebook:hover { box-shadow: 0 8px 20px -4px rgba(24, 119, 242, 0.6); }
+        .side-menu-social a.whatsapp:hover { box-shadow: 0 8px 20px -4px rgba(37, 211, 102, 0.6); }
+        .side-menu-social a.youtube:hover  { box-shadow: 0 8px 20px -4px rgba(255, 0, 0, 0.6); }
+
+        .side-menu-footer {
+            padding: 16px 24px 24px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .side-menu-footer p {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .side-menu-footer p i {
+            color: #ef4444;
+        }
+
+        /* ===== ORDER MODAL STYLES ===== */
+        .order-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            padding: 20px;
+        }
+
+        .order-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .order-modal {
+            background: white;
+            border-radius: 28px;
+            width: 100%;
+            max-width: 460px;
+            padding: 36px 32px 32px;
+            text-align: center;
+            position: relative;
+            transform: translateY(30px) scale(0.95);
+            transition: transform 0.3s ease;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3);
+        }
+
+        .order-modal-overlay.active .order-modal {
+            transform: translateY(0) scale(1);
+        }
+
+        .order-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #f1f5f9;
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #64748b;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+
+        .order-modal-close:hover {
+            background: #e2e8f0;
+            color: #ef4444;
+            transform: rotate(90deg);
+        }
+
+        .order-modal-icon {
+            width: 76px;
+            height: 76px;
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 34px;
+            color: #2563eb;
+        }
+
+        .order-modal h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .order-modal .order-book-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2563eb;
+            background: #eff6ff;
+            padding: 10px 18px;
+            border-radius: 14px;
+            margin-bottom: 8px;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        .order-modal .order-book-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 20px;
+        }
+
+        .order-modal p.order-instruction {
+            font-size: 15px;
+            color: #64748b;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .order-options {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .order-option-btn {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 22px;
+            border-radius: 18px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            font-family: 'Hind Siliguri', sans-serif;
+            text-align: left;
+        }
+
+        .order-option-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 28px -8px rgba(0, 0, 0, 0.15);
+        }
+
+        .order-option-btn.messenger:hover {
+            border-color: #0084ff;
+            background: #f0f7ff;
+        }
+
+        .order-option-btn.whatsapp:hover {
+            border-color: #25d366;
+            background: #f0fdf4;
+        }
+
+        .order-option-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .order-option-btn.messenger .order-option-icon {
+            background: linear-gradient(135deg, #0084ff, #0066cc);
+            box-shadow: 0 8px 16px -4px rgba(0, 132, 255, 0.4);
+        }
+
+        .order-option-btn.whatsapp .order-option-icon {
+            background: linear-gradient(135deg, #25d366, #1da851);
+            box-shadow: 0 8px 16px -4px rgba(37, 211, 102, 0.4);
+        }
+
+        .order-option-text h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 3px;
+        }
+
+        .order-option-text p {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .order-option-arrow {
+            margin-left: auto;
+            color: #cbd5e1;
+            font-size: 16px;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .order-option-btn:hover .order-option-arrow {
+            transform: translateX(4px);
+            color: #64748b;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 768px) {
+            .hero-title h2 {
+                font-size: 30px;
+            }
+            .hero-title p {
+                font-size: 16px;
+            }
+            .section-header h2 {
+                font-size: 26px;
+            }
+            .cta-content h2 {
+                font-size: 28px;
+            }
+            .category-tab {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            .order-modal {
+                padding: 30px 22px 26px;
+            }
+            .three-dot-btn {
+                width: 56px;
+                height: 56px;
+                font-size: 23px;
+                right: 18px;
+                bottom: 22px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .book-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            .book-card {
+                padding: 14px 12px 18px;
+            }
+            .book-card h3 {
+                font-size: 14px;
+                min-height: 44px;
+            }
+            .book-cover {
+                height: 150px;
+            }
+            .book-price {
+                font-size: 17px;
+                gap: 6px;
+            }
+            .book-actions {
+                flex-direction: column;
+            }
+            .book-btn.secondary {
+                width: 100%;
+            }
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            .feature-card {
+                padding: 20px 16px;
+            }
+            .feature-card h3 {
+                font-size: 16px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stat-item .stat-number {
+                font-size: 28px;
+            }
+            .category-tab {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+            .book-btn {
+                font-size: 12px;
+                padding: 10px 12px;
+            }
+            .quick-view {
+                display: none;
+            }
+            .order-modal h3 {
+                font-size: 20px;
+            }
+            .order-option-btn {
+                padding: 14px 16px;
+                gap: 12px;
+            }
+            .order-option-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 22px;
+            }
+            .footer-social a {
+                width: 42px;
+                height: 42px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="top-header">
+        <div class="container header-row">
+            <div class="logo-area">
+                <div class="logo-icon">∑</div>
+                <div class="logo-text">
+                    <h1>Ahafik Math Care</h1>
+                    <span>গণিত বইয়ের অনলাইন স্টোর</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAV BAR -->
+    <nav class="nav-categories">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#"><i class="fas fa-square-root-variable"></i> বীজগণিত</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> ক্যালকুলাস</a></li>
+                <li><a href="#"><i class="fas fa-shapes"></i> জ্যামিতি</a></li>
+                <li><a href="#"><i class="fas fa-dice"></i> সম্ভাবনা</a></li>
+                <li><a href="#"><i class="fas fa-infinity"></i> সংখ্যাতত্ত্ব</a></li>
+                <li><a href="#"><i class="fas fa-brain"></i> মানসিক গণিত</a></li>
+                <li><a href="#"><i class="fas fa-graduation-cap"></i> পরীক্ষা প্রস্তুতি</a></li>
+                <li><a href="#"><i class="fas fa-tag"></i> অফার</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+        <div class="container hero-content">
+            <div class="hero-title">
+                <h2>৩০+ বছরের অভিজ্ঞতা</h2>
+                <p>গণিত বই বিক্রয়ে বিশ্বস্ত প্রতিষ্ঠান</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-book"></i></div>
+                    <h3>বেসিক থেকে অ্যাডভান্সড</h3>
+                    <p>প্রতিটি স্তরের জন্য বইয়ের বিশাল সংগ্রহ</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-tasks"></i></div>
+                    <h3>সকল বিষয়ে বই</h3>
+                    <p>বীজগণিত, জ্যামিতি, ক্যালকুলাস সহ সব বিষয়</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <h3>লাইভ সাপোর্ট</h3>
+                    <p>লাইভ সাপোর্ট ও সহজ রিটার্ন পলিসি</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-truck"></i></div>
+                    <h3>দ্রুত ডেলিভারি</h3>
+                    <p>সারা বাংলাদেশে দ্রুত ও নিরাপদ ডেলিভারি</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKS SECTION -->
+    <section class="books-section" id="books">
+        <div class="container">
+            <div class="section-header">
+                <h2>আমাদের বই সমূহ...</h2>
+                <p>তোমার প্রয়োজন অনুযায়ী সেরা বইটি বেছে নাও</p>
+            </div>
+
+            <!-- Class Category Tabs -->
+            <div class="category-tabs">
+                <button class="category-tab active" data-class=""><i class="fas fa-layer-group"></i> সব বই</button>
+                <button class="category-tab" data-class="6-8"><i class="fas fa-child"></i> ৬-৮</button>
+                <button class="category-tab" data-class="ssc"><i class="fas fa-graduation-cap"></i> SSC</button>
+                <button class="category-tab" data-class="hsc"><i class="fas fa-university"></i> HSC</button>
+            </div>
+
+            <div class="book-grid" id="bookGrid">
+                <!-- Book 1: Algebra -->
+                <div class="book-card algebra" data-class="ssc">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=400&h=500&fit=crop" alt="বীজগণিতের সহজ পাঠ">
+                        <span class="book-badge bestseller">বেস্টসেলার</span>
+                        <button class="quick-view"><i class="fas fa-eye"></i> কুইক ভিউ</button>
+                    </div>
+                    <h3>বীজগণিতের সহজ পাঠ</h3>
+                    <div class="book-author">ড. আর. আহমেদ</div>
+                    <div class="book-rating">★★★★★ <span>(২১৪)</span></div>
+                    <div class="book-price">৳২৫০ <span class="old-price">৳৪২০</span> <span class="discount">-৪০%</span></div>
+                    <div class="book-actions">
+                        <button class="book-btn primary order-trigger" data-book="বীজগণিতের সহজ পাঠ" data-price="২৫০"><i class="fas fa-cart-plus"></i> কার্টে যোগ</button>
+                        <button class="book-btn secondary"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <!-- Book 2: Calculus -->
+                <div class="book-card calculus" data-class="hsc">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=500&fit=crop" alt="ক্যালকুলাস: প্রথম পাঠ">
+                        <span class="book-badge hot">হট</span>
+                        <button class="quick-view"><i class="fas fa-eye"></i> কুইক ভিউ</button>
+                    </div>
+                    <h3>ক্যালকুলাস: প্রথম পাঠ</h3>
+                    <div class="book-author">এস. করিম</div>
+                    <div class="book-rating">★★★★★ <span>(১৮৭)</span></div>
+                    <div class="book-price">৳৩৮০ <span class="old-price">৳৫৮০</span> <span class="discount">-৩৫%</span></div>
+                    <div class="book-actions">
+                        <button class="book-btn primary order-trigger" data-book="ক্যালকুলাস: প্রথম পাঠ" data-price="৩৮০"><i class="fas fa-cart-plus"></i> কার্টে যোগ</button>
+                        <button class="book-btn secondary"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <!-- Book 3: Geometry -->
+                <div class="book-card geometry" data-class="6-8">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop" alt="জ্যামিতি: প্রমাণ ও অনুশীলন">
+                        <span class="book-badge">-২৫%</span>
+                        <button class="quick-view"><i class="fas fa-eye"></i> কুইক ভিউ</button>
+                    </div>
+                    <h3>জ্যামিতি: প্রমাণ ও অনুশীলন</h3>
+                    <div class="book-author">এন. জাহান</div>
+                    <div class="book-rating">★★★★☆ <span>(৯৬)</span></div>
+                    <div class="book-price">৳২৮০ <span class="old-price">৳৩৭০</span></div>
+                    <div class="book-actions">
+                        <button class="book-btn primary order-trigger" data-book="জ্যামিতি: প্রমাণ ও অনুশীলন" data-price="২৮০"><i class="fas fa-cart-plus"></i> কার্টে যোগ</button>
+                        <button class="book-btn secondary"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <!-- Book 4: Probability -->
+                <div class="book-card probability" data-class="hsc">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=500&fit=crop" alt="সম্ভাবনা ও পরিসংখ্যান">
+                        <span class="book-badge">-৩০%</span>
+                        <button class="quick-view"><i class="fas fa-eye"></i> কুইক ভিউ</button>
+                    </div>
+                    <h3>সম্ভাবনা ও পরিসংখ্যান</h3>
+                    <div class="book-author">এম. খান</div>
+                    <div class="book-rating">★★★★★ <span>(১৪২)</span></div>
+                    <div class="book-price">৳৩২০ <span class="old-price">৳৪৫০</span></div>
+                    <div class="book-actions">
+                        <button class="book-btn primary order-trigger" data-book="সম্ভাবনা ও পরিসংখ্যান" data-price="৩২০"><i class="fas fa-cart-plus"></i> কার্টে যোগ</button>
+                        <button class="book-btn secondary"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <!-- Book 5: Mental Math -->
+                <div class="book-card mental-math" data-class="6-8">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=400&h=500&fit=crop" alt="মানসিক গণিতের কৌশল">
+                        <span class="book-badge new">নতুন</span>
+                        <button class="quick-view"><i class="fas fa-eye"></i> কুইক ভিউ</button>
+                    </div>
+                    <h3>মানসিক গণিতের কৌশল</h3>
+                    <div class="book-author">এ. রহমান</div>
+                    <div class="book-rating">★★★★☆ <span>(৭৮)</span></div>
+                    <div class="book-price">৳২১০ <span class="old-price">৳২৬০</span></div>
+                    <div class="book-actions">
+                        <button class="book-btn primary order-trigger" data-book="মানসিক গণিতের কৌশল" data-price="২১০"><i class="fas fa-cart-plus"></i> কার্টে যোগ</button>
+                        <button class="book-btn secondary"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <!-- Book 6: Number Theory -->
+                <div class="book-card number-theory" data-class="hsc">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=500&fit=crop" alt="সংখ্যাতত্ত্ব: এক অন্বেষণ">
+                        <span class="book-badge bestseller">বেস্টসেলার</span>
+                        <button class="quick-view"><i class="fas fa-eye"></i> কুইক ভিউ</button>
+                    </div>
+                    <h3>সংখ্যাতত্ত্ব: এক অন্বেষণ</h3>
+                    <div class="book-author">এফ. চৌধুরী</div>
+                    <div class="book-rating">★★★★★ <span>(২০৩)</span></div>
+                    <div class="book-price">৳৩৫০ <span class="old-price">৳৬৪০</span> <span class="discount">-৪৫%</span></div>
+                    <div class="book-actions">
+                        <button class="book-btn primary order-trigger" data-book="সংখ্যাতত্ত্ব: এক অন্বেষণ" data-price="৩৫০"><i class="fas fa-cart-plus"></i> কার্টে যোগ</button>
+                        <button class="book-btn secondary"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <!-- Book 7: Division -->
+                <div class="book-card algebra" data-class="6-8">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?w=400&h=500&fit=crop" alt="ভাগ ও উৎপাদক">
+                        <span class="book-badge new">নতুন</span>
+                        <button class="quick-view"><i class="fas fa-eye"></i> কুইক ভিউ</button>
+                    </div>
+                    <h3>ভাগ ও উৎপাদক</h3>
+                    <div class="book-author">টি. হোসেন</div>
+                    <div class="book-rating">★★★★☆ <span>(২৪)</span></div>
+                    <div class="book-price">৳১৮০ <span class="old-price">৳২৪০</span></div>
+                    <div class="book-actions">
+                        <button class="book-btn primary order-trigger" data-book="ভাগ ও উৎপাদক" data-price="১৮০"><i class="fas fa-cart-plus"></i> কার্টে যোগ</button>
+                        <button class="book-btn secondary"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <!-- Book 8: Trigonometry -->
+                <div class="book-card geometry" data-class="ssc">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=500&fit=crop" alt="ত্রিকোণমিতির মূল কথা">
+                        <span class="book-badge hot">হট</span>
+                        <button class="quick-view"><i class="fas fa-eye"></i> কুইক ভিউ</button>
+                    </div>
+                    <h3>ত্রিকোণমিতির মূল কথা</h3>
+                    <div class="book-author">কে. আলম</div>
+                    <div class="book-rating">★★★★☆ <span>(৩১)</span></div>
+                    <div class="book-price">৳২৫০ <span class="old-price">৳৩৪০</span></div>
+                    <div class="book-actions">
+                        <button class="book-btn primary order-trigger" data-book="ত্রিকোণমিতির মূল কথা" data-price="২৫০"><i class="fas fa-cart-plus"></i> কার্টে যোগ</button>
+                        <button class="book-btn secondary"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+
+                <!-- Book 9: Data Handling -->
+                <div class="book-card probability" data-class="ssc">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=500&fit=crop" alt="ডেটা হ্যান্ডলিং">
+                        <span class="book-badge new">নতুন</span>
+                        <button class="quick-view"><i class="fas fa-eye"></i> কুইক ভিউ</button>
+                    </div>
+                    <h3>ডেটা হ্যান্ডলিং</h3>
+                    <div class="book-author">আর. সুলতানা</div>
+                    <div class="book-rating">★★★★★ <span>(৪২)</span></div>
+                    <div class="book-price">৳২২০ <span class="old-price">৳২৯০</span></div>
+                    <div class="book-actions">
+                        <button class="book-btn primary order-trigger" data-book="ডেটা হ্যান্ডলিং" data-price="২২০"><i class="fas fa-cart-plus"></i> কার্টে যোগ</button>
+                        <button class="book-btn secondary"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="why-section" id="why">
+        <div class="container">
+            <div class="section-header">
+                <h2>কেন আমাদের থেকে কিনবেন?</h2>
+                <p>আমরা সেরা মানের বই ও সেবা নিশ্চিত করি</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-book-reader"></i></div>
+                    <h4>অরিজিনাল বই</h4>
+                    <p>১০০% অরিজিনাল ও মানসম্মত বইয়ের নিশ্চয়তা</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-tags"></i></div>
+                    <h4>সেরা দাম</h4>
+                    <p>সবচেয়ে কম দামে বই কেনার সুযোগ</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-undo"></i></div>
+                    <h4>সহজ রিটার্ন</h4>
+                    <p>৭ দিনের মধ্যে সহজ রিটার্ন পলিসি</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>নিরাপদ পেমেন্ট</h4>
+                    <p>বিকাশ, নগদ ও ক্যাশ অন ডেলিভারি</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>ক্রেতাদের মতামত</h2>
+                <p>আমাদের সন্তুষ্ট ক্রেতারা যা বলছেন</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"বীজগণিতের সহজ পাঠ বইটি আমার সন্তানের জন্য খুবই উপকারী হয়েছে। সহজ ভাষায় লেখা এবং অনুশীলনী অনেক ভালো।"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">রা</div>
+                        <div class="testimonial-info">
+                            <h5>রহিমা আক্তার</h5>
+                            <p>ঢাকা</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"দ্রুত ডেলিভারি এবং বইয়ের মান অসাধারণ। ক্যালকুলাস বইটি আমার বিশ্ববিদ্যালয়ের প্রস্তুতিতে দারুণ সাহায্য করেছে।"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">সা</div>
+                        <div class="testimonial-info">
+                            <h5>সাকিব হাসান</h5>
+                            <p>চট্টগ্রাম</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★☆</div>
+                    <p class="testimonial-text">"বইয়ের কালেকশন অনেক বড়। আমি আমার ক্লাসের জন্য প্রয়োজনীয় সব বই এক জায়গায় পেয়েছি। ধন্যবাদ!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">না</div>
+                        <div class="testimonial-info">
+                            <h5>নাফিসা ইসলাম</h5>
+                            <p>সিলেট</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">৩০+</div>
+                    <div class="stat-label">বছরের অভিজ্ঞতা</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">৫,০০০+</div>
+                    <div class="stat-label">সন্তুষ্ট ক্রেতা</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">৫০০+</div>
+                    <div class="stat-label">বইয়ের সংগ্রহ</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">৯৮%</div>
+                    <div class="stat-label">সন্তুষ্টির হার</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" id="order">
+        <div class="container cta-content">
+            <h2>আজই অর্ডার করো তোমার প্রিয় বই</h2>
+            <p>সকল আপডেট পেতে যুক্ত হয়ে যাও আমাদের সাথে। নতুন বইয়ের অফার ও ছাড়ের জন্য সাবস্ক্রাইব করো।</p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-btn-primary order-trigger" data-book="সাধারণ অর্ডার" data-price="বিভিন্ন">
+                    <i class="fas fa-shopping-bag"></i> এখনই কিনুন
+                </a>
+                <a href="tel:+8801782201537" class="cta-btn-secondary">
+                    <i class="fas fa-phone-alt"></i> কল করুন
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Ahafik Math Care</h4>
+                    <p style="font-size: 15px; line-height: 1.8; margin-bottom: 16px;">
+                        ৩০+ বছরের অভিজ্ঞতা সম্পন্ন গণিত বইয়ের অনলাইন স্টোর। বেসিক থেকে অ্যাডভান্সড পর্যন্ত সকল স্তরের জন্য বই।
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/shafikmath" target="_blank" rel="noopener" class="facebook" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://web.whatsapp.com/send/?phone=%2B8801782201537&token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjEyNSJ9.eyJleHAiOjE3OTA1MjcwNTUsInBob25lIjoiKzg4MDE3ODIyMDE1MzciLCJjb250ZXh0IjoiQWZpWGtIam5pN1dNeldkTldIY2tKajRtTVB5MURHRHd6NlBndEFnaE1vanFhYzZ4Tkh0X3RYaWRqcWxKcDJWRGg3TGw4MTFtWE02dnNpVlNTQjQ4bmE0UlB5dGJGSUVvTjV0SjdnTWlEeHQ1cFcxZlVxYTc4Uk1UcFJzeTNMWlMzT3VNUnJXTWY5SVhTajdDTVcyYmtVaWZidyIsInNvdXJjZSI6IkZCX1BhZ2UiLCJhcHAiOiJmYWNlYm9vayIsImVudHJ5X3BvaW50IjoicGFnZV9jdGEifQ.1mItPlhhRIrA-6FwtHmjTqC6nloXlM0tCrmwX1oD_Zk_6YD66HMvJMXzU3wPJ_MxP8sLsqHJnkiwxbpdtW_o-A&fbclid=IwY2xjawUk1C5leHRuA2FlbQIxMABwZG9mAWJyaWQRMXR1alozZ0hhbXR2TXpvaHBzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEe1EslzopEuLS2L2-v4MFC4u5wxzWDnpH1d4rP3jF_muF565nJ_Uw8ns-WgIM_aem_iTTGNGybe93P1S_y2IrnFA" target="_blank" rel="noopener" class="whatsapp" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@shafikmath" target="_blank" rel="noopener" class="youtube" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="instagram" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>দ্রুত লিংক</h4>
+                    <ul>
+                        <li><a href="#home">হোম</a></li>
+                        <li><a href="#books">সব বই</a></li>
+                        <li><a href="#why">কেন আমরা</a></li>
+                        <li><a href="#order">অর্ডার</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>সাপোর্ট</h4>
+                    <ul>
+                        <li><a href="#">সচরাচর জিজ্ঞাসা</a></li>
+                        <li><a href="#contact">যোগাযোগ</a></li>
+                        <li><a href="#">প্রাইভেসি পলিসি</a></li>
+                        <li><a href="#">শর্তাবলী</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>যোগাযোগ</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> ঢাকা, বাংলাদেশ</a></li>
+                        <li><a href="tel:+8801782201537"><i class="fas fa-phone" style="margin-right: 8px;"></i> +৮৮০ ১৭৮২-২০১৫৩৭</a></li>
+                        <li><a href="#"><i class="fas fa-envelope" style="margin-right: 8px;"></i> info@ahafikmath.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span><i class="far fa-copyright"></i> ২০২৫ Ahafik Math Care। সর্বস্বত্ব সংরক্ষিত।</span>
+                <span>ভালোবাসা দিয়ে তৈরি <i class="fas fa-heart" style="color: #ef4444;"></i> গণিত প্রেমীদের জন্য</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== THREE DOT BUTTON (FLOATING) ===== -->
+    <button class="three-dot-btn" id="threeDotBtn" aria-label="Menu">
+        <i class="fas fa-ellipsis-v"></i>
+    </button>
+
+    <!-- ===== SIDE MENU OVERLAY ===== -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+
+    <!-- ===== SIDE MENU PANEL ===== -->
+    <aside class="side-menu" id="sideMenu">
+        <div class="side-menu-header">
+            <button class="side-menu-close" id="sideMenuClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3><i class="fas fa-compass"></i> কুইক নেভিগেশন</h3>
+            <p>এক ক্লিকে সবকিছুতে পৌঁছে যান</p>
+        </div>
+
+        <div class="side-menu-body">
+            <!-- সেকশন নেভিগেশন -->
+            <div class="side-menu-section-title"><i class="fas fa-map-signs"></i> সেকশন সমূহ</div>
+            <a href="#home" class="side-menu-link menu-nav-link">
+                <div class="menu-icon blue"><i class="fas fa-home"></i></div>
+                হোম
+            </a>
+            <a href="#books" class="side-menu-link menu-nav-link">
+                <div class="menu-icon purple"><i class="fas fa-book"></i></div>
+                সব বই
+            </a>
+            <a href="#why" class="side-menu-link menu-nav-link">
+                <div class="menu-icon green"><i class="fas fa-star"></i></div>
+                কেন আমাদের থেকে কিনবেন
+            </a>
+            <a href="#reviews" class="side-menu-link menu-nav-link">
+                <div class="menu-icon orange"><i class="fas fa-comments"></i></div>
+                ক্রেতাদের মতামত
+            </a>
+            <a href="#stats" class="side-menu-link menu-nav-link">
+                <div class="menu-icon cyan"><i class="fas fa-chart-bar"></i></div>
+                পরিসংখ্যান
+            </a>
+            <a href="#order" class="side-menu-link menu-nav-link">
+                <div class="menu-icon yellow"><i class="fas fa-shopping-bag"></i></div>
+                অর্ডার করুন
+            </a>
+            <a href="#contact" class="side-menu-link menu-nav-link">
+                <div class="menu-icon red"><i class="fas fa-envelope"></i></div>
+                যোগাযোগ
+            </a>
+
+            <div class="side-menu-divider"></div>
+
+            <!-- বিষয় অনুযায়ী -->
+            <div class="side-menu-section-title"><i class="fas fa-filter"></i> বিষয় অনুযায়ী</div>
+            <a href="#books" class="side-menu-link menu-topic-link" data-topic="algebra">
+                <div class="menu-icon blue"><i class="fas fa-square-root-variable"></i></div>
+                বীজগণিত
+            </a>
+            <a href="#books" class="side-menu-link menu-topic-link" data-topic="calculus">
+                <div class="menu-icon purple"><i class="fas fa-chart-line"></i></div>
+                ক্যালকুলাস
+            </a>
+            <a href="#books" class="side-menu-link menu-topic-link" data-topic="geometry">
+                <div class="menu-icon green"><i class="fas fa-shapes"></i></div>
+                জ্যামিতি
+            </a>
+            <a href="#books" class="side-menu-link menu-topic-link" data-topic="probability">
+                <div class="menu-icon orange"><i class="fas fa-dice"></i></div>
+                সম্ভাবনা
+            </a>
+
+            <div class="side-menu-divider"></div>
+
+            <!-- অর্ডার -->
+            <div class="side-menu-section-title"><i class="fas fa-bolt"></i> দ্রুত অর্ডার</div>
+            <a href="#" class="side-menu-link order-trigger" data-book="সাধারণ অর্ডার" data-price="বিভিন্ন">
+                <div class="menu-icon yellow"><i class="fas fa-shopping-cart"></i></div>
+                এখনই অর্ডার করুন
+            </a>
+
+            <div class="side-menu-divider"></div>
+
+            <!-- সোশ্যাল -->
+            <div class="side-menu-section-title"><i class="fas fa-share-alt"></i> আমাদের সাথে যুক্ত হোন</div>
+            <div class="side-menu-social">
+                <a href="https://www.facebook.com/shafikmath" target="_blank" rel="noopener" class="facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://web.whatsapp.com/send/?phone=%2B8801782201537&token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjEyNSJ9.eyJleHAiOjE3OTA1MjcwNTUsInBob25lIjoiKzg4MDE3ODIyMDE1MzciLCJjb250ZXh0IjoiQWZpWGtIam5pN1dNeldkTldIY2tKajRtTVB5MURHRHd6NlBndEFnaE1vanFhYzZ4Tkh0X3RYaWRqcWxKcDJWRGg3TGw4MTFtWE02dnNpVlNTQjQ4bmE0UlB5dGJGSUVvTjV0SjdnTWlEeHQ1cFcxZlVxYTc4Uk1UcFJzeTNMWlMzT3VNUnJXTWY5SVhTajdDTVcyYmtVaWZidyIsInNvdXJjZSI6IkZCX1BhZ2UiLCJhcHAiOiJmYWNlYm9vayIsImVudHJ5X3BvaW50IjoicGFnZV9jdGEifQ.1mItPlhhRIrA-6FwtHmjTqC6nloXlM0tCrmwX1oD_Zk_6YD66HMvJMXzU3wPJ_MxP8sLsqHJnkiwxbpdtW_o-A&fbclid=IwY2xjawUk1C5leHRuA2FlbQIxMABwZG9mAWJyaWQRMXR1alozZ0hhbXR2TXpvaHBzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEe1EslzopEuLS2L2-v4MFC4u5wxzWDnpH1d4rP3jF_muF565nJ_Uw8ns-WgIM_aem_iTTGNGybe93P1S_y2IrnFA" target="_blank" rel="noopener" class="whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="https://www.youtube.com/@shafikmath" target="_blank" rel="noopener" class="youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="side-menu-footer">
+            <p>তৈরি <i class="fas fa-heart"></i> দিয়ে গণিত প্রেমীদের জন্য</p>
+        </div>
+    </aside>
+
+    <!-- ===== ORDER MODAL ===== -->
+    <div class="order-modal-overlay" id="orderModalOverlay">
+        <div class="order-modal">
+            <button class="order-modal-close" id="orderModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="order-modal-icon">
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+            <h3>অর্ডার করুন</h3>
+            <div class="order-book-name" id="modalBookName">বইয়ের নাম</div>
+            <div class="order-book-price" id="modalBookPrice">৳০</div>
+            <p class="order-instruction">
+                নিচের যেকোনো একটি অপশনে ক্লিক করে আমাদের সাথে সরাসরি যোগাযোগ করুন। আমরা দ্রুত আপনার অর্ডার প্রসেস করব।
+            </p>
+            <div class="order-options">
+                <a href="#" class="order-option-btn messenger" id="messengerBtn" target="_blank" rel="noopener">
+                    <div class="order-option-icon">
+                        <i class="fab fa-facebook-messenger"></i>
+                    </div>
+                    <div class="order-option-text">
+                        <h4>Messenger এ অর্ডার</h4>
+                        <p>ফেসবুক মেসেঞ্জারে মেসেজ দিন</p>
+                    </div>
+                    <i class="fas fa-chevron-right order-option-arrow"></i>
+                </a>
+                <a href="#" class="order-option-btn whatsapp" id="whatsappBtn" target="_blank" rel="noopener">
+                    <div class="order-option-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="order-option-text">
+                        <h4>WhatsApp এ অর্ডার</h4>
+                        <p>হোয়াটসঅ্যাপে মেসেজ দিন</p>
+                    </div>
+                    <i class="fas fa-chevron-right order-option-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // ===== CONFIGURATION =====
+        // ============================================================
+        const FACEBOOK_PAGE_USERNAME = 'shafikmath';
+        const WHATSAPP_WEB_LINK = 'https://web.whatsapp.com/send/?phone=%2B8801782201537&token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjEyNSJ9.eyJleHAiOjE3OTA1MjcwNTUsInBob25lIjoiKzg4MDE3ODIyMDE1MzciLCJjb250ZXh0IjoiQWZpWGtIam5pN1dNeldkTldIY2tKajRtTVB5MURHRHd6NlBndEFnaE1vanFhYzZ4Tkh0X3RYaWRqcWxKcDJWRGg3TGw4MTFtWE02dnNpVlNTQjQ4bmE0UlB5dGJGSUVvTjV0SjdnTWlEeHQ1cFcxZlVxYTc4Uk1UcFJzeTNMWlMzT3VNUnJXTWY5SVhTajdDTVcyYmtVaWZidyIsInNvdXJjZSI6IkZCX1BhZ2UiLCJhcHAiOiJmYWNlYm9vayIsImVudHJ5X3BvaW50IjoicGFnZV9jdGEifQ.1mItPlhhRIrA-6FwtHmjTqC6nloXlM0tCrmwX1oD_Zk_6YD66HMvJMXzU3wPJ_MxP8sLsqHJnkiwxbpdtW_o-A&fbclid=IwY2xjawUk1C5leHRuA2FlbQIxMABwZG9mAWJyaWQRMXR1alozZ0hhbXR2TXpvaHBzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEe1EslzopEuLS2L2-v4MFC4u5wxzWDnpH1d4rP3jF_muF565nJ_Uw8ns-WgIM_aem_iTTGNGybe93P1S_y2IrnFA';
+
+        // ============================================================
+        // ===== THREE DOT MENU =====
+        // ============================================================
+        const threeDotBtn = document.getElementById('threeDotBtn');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const sideMenuClose = document.getElementById('sideMenuClose');
+
+        function openSideMenu() {
+            sideMenu.classList.add('active');
+            sideMenuOverlay.classList.add('active');
+            threeDotBtn.classList.add('active');
+            threeDotBtn.innerHTML = '<i class="fas fa-times"></i>';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSideMenu() {
+            sideMenu.classList.remove('active');
+            sideMenuOverlay.classList.remove('active');
+            threeDotBtn.classList.remove('active');
+            threeDotBtn.innerHTML = '<i class="fas fa-ellipsis-v"></i>';
+            document.body.style.overflow = '';
+        }
+
+        threeDotBtn.addEventListener('click', () => {
+            if (sideMenu.classList.contains('active')) {
+                closeSideMenu();
+            } else {
+                openSideMenu();
+            }
+        });
+
+        sideMenuClose.addEventListener('click', closeSideMenu);
+        sideMenuOverlay.addEventListener('click', closeSideMenu);
+
+        // Close side menu when a navigation link is clicked
+        document.querySelectorAll('.menu-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                setTimeout(closeSideMenu, 200);
+            });
+        });
+
+        // Topic filter links (e.g. click "বীজগণিত" → scroll to books + filter)
+        document.querySelectorAll('.menu-topic-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const topic = link.dataset.topic;
+                closeSideMenu();
+
+                // Scroll to books section
+                setTimeout(() => {
+                    document.getElementById('books').scrollIntoView({ behavior: 'smooth' });
+
+                    // Filter books by matching class attribute (we map topics to cards via content)
+                    const cards = document.querySelectorAll('.book-card');
+                    cards.forEach(card => {
+                        const cardText = card.textContent.toLowerCase();
+                        const topicMap = {
+                            'algebra': 'বীজগণিত',
+                            'calculus': 'ক্যালকুলাস',
+                            'geometry': 'জ্যামিতি',
+                            'probability': 'সম্ভাবনা'
+                        };
+                        if (cardText.includes(topicMap[topic])) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+
+                    // Reset category tabs to "all"
+                    document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelector('.category-tab[data-class=""]').classList.add('active');
+                }, 300);
+            });
+        });
+
+        // ============================================================
+        // ===== CATEGORY TAB FUNCTIONALITY =====
+        // ============================================================
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const bookCards = document.querySelectorAll('.book-card');
+
+        let activeCategory = '';
+
+        function filterByCategory() {
+            bookCards.forEach(card => {
+                const cardClass = card.dataset.class || '';
+                if (!activeCategory || cardClass === activeCategory) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                activeCategory = tab.dataset.class || '';
+                filterByCategory();
+            });
+        });
+
+        // ============================================================
+        // ===== ORDER MODAL FUNCTIONALITY =====
+        // ============================================================
+        const orderModalOverlay = document.getElementById('orderModalOverlay');
+        const orderModalClose = document.getElementById('orderModalClose');
+        const modalBookName = document.getElementById('modalBookName');
+        const modalBookPrice = document.getElementById('modalBookPrice');
+        const messengerBtn = document.getElementById('messengerBtn');
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        const orderTriggers = document.querySelectorAll('.order-trigger');
+
+        function openOrderModal(bookName, bookPrice) {
+            modalBookName.textContent = bookName;
+            modalBookPrice.textContent = '৳' + bookPrice;
+
+            const messageText = `আসসালামু আলাইকুম, আমি "${bookName}" বইটি অর্ডার করতে চাই। দাম: ৳${bookPrice}।`;
+
+            messengerBtn.href = `https://m.me/${FACEBOOK_PAGE_USERNAME}?text=${encodeURIComponent(messageText)}`;
+            whatsappBtn.href = WHATSAPP_WEB_LINK;
+
+            // Close side menu if open
+            closeSideMenu();
+
+            orderModalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeOrderModal() {
+            orderModalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        orderTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const bookName = trigger.dataset.book || 'সাধারণ অর্ডার';
+                const bookPrice = trigger.dataset.price || 'বিভিন্ন';
+                openOrderModal(bookName, bookPrice);
+            });
+        });
+
+        orderModalClose.addEventListener('click', closeOrderModal);
+
+        orderModalOverlay.addEventListener('click', (e) => {
+            if (e.target === orderModalOverlay) {
+                closeOrderModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (orderModalOverlay.classList.contains('active')) {
+                    closeOrderModal();
+                } else if (sideMenu.classList.contains('active')) {
+                    closeSideMenu();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
